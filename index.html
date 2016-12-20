@@ -1,12 +1,29 @@
+<!DOCTYPE html>
 <html>
   <head>
-<style>
-  * {
-    font-family: sans-serif;
-  }
-</style>
+	<style type="text/css"> 
+	  * {
+	    font-family: sans-serif;
+	  }
+	</style>
+	<script type="application/javascript">
+	   window.addEventListener('load', function(evnt) {
+	     var rainbow = document.getElementById('rainbow');
+	     var clicked = false;
+	     rainbow.addEventListener('click', function(evnt) {
+	     	if (clicked) {return;}
+	     	clicked = true;
+	     	var hue = 0;
+	     	var text = document.getElementById('name');
+	     	window.setInterval(function() {
+	     		text.style['color'] = `hsl(${hue % 360}, 100%, 50%)`;
+	     		hue += 1;
+	     	}, 0);
+	     });
+	   });
+	</script>
   </head>
   <body>
-    <h1 style='letter-spacing: 5px;'>vapor.cab</h1>
+    <h1 id="name" style='letter-spacing: 5px;'>vapo<span id="rainbow">r</span>.cab</h1>
   </body>
 </html>
