@@ -5,25 +5,38 @@
 	  * {
 	    font-family: sans-serif;
 	  }
+	  html {
+	  	background: url("img/beach.jpg") no-repeat center center fixed;
+	  	background-size: cover;
+	  }
+	  #dialog, #name {
+	  	text-align: center;
+	  	margin-top: 100px;
+	  	user-select: none;
+	  }
+	  #name {
+	  	display: none;
+	  }
 	</style>
 	<script type="application/javascript">
 	   window.addEventListener('load', function(evnt) {
-	     var rainbow = document.getElementById('rainbow');
-	     var clicked = false;
-	     rainbow.addEventListener('click', function(evnt) {
-	     	if (clicked) {return;}
-	     	clicked = true;
-	     	var hue = 0;
-	     	var text = document.getElementById('name');
-	     	window.setInterval(function() {
-	     		text.style['color'] = `hsl(${hue % 360}, 100%, 50%)`;
-	     		hue += 1;
-	     	}, 0);
+	   	 var closeButton = document.getElementById('close-button');
+	     closeButton.addEventListener('click', function(evnt) {
+	     	var dialog = document.getElementById('dialog');
+	     	var name = document.getElementById('name');
+	     	dialog.style.display = 'none';
+	     	name.style.display = 'block';
 	     });
 	   });
 	</script>
   </head>
   <body>
-    <h1 id="name" style='letter-spacing: 5px;'>vapo<span id="rainbow">r</span>.cab</h1>
+    <h1 id="name">&#xfeff;&#xff56;&#xff41;&#xff50;&#xff4f;&#xff52;&#xff0e;&#xff43;&#xff41;&#xff42;</h1>
+    <div id="dialog">
+    	<img src="img/dialog.png" usemap="#close-map" />
+    	<map name="close-map">
+    	  <area id="close-button" shape="rect" coords="238,147,346,168" nohref />
+    	</map>
+    </div>
   </body>
 </html>
