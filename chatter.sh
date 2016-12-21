@@ -17,16 +17,19 @@ while true; do
       control=false
       echo "$col: t = $tempo, n = $ncols"
     fi
+    per=$(echo "( 60 / $tempo )" | bc -l)
 
     case "${line:$col:1}" in
       "x")
-        echo " ${line:$ncols}"
-        ${line:$ncols} &
+        cmd=$(echo ${line:$ncols} \
+              | sed -e "s/\$PER/$per/g")
+        echo " $cmd"
+        $cmd &
         ;;
     esac
   done < "$score"
 
   col=$(expr \( $col + 1 \) % $ncols)
   t1=$(gdate "+%s.%N")
-  sleep $(echo "( 60 / $tempo ) - ( $t1 - $t0 )" | bc -l)
+  sleep $(echo "$per - ( $t1 - $t0 )" | bc -l)
 done
