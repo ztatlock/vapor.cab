@@ -30,13 +30,14 @@ __   __  __ _  _ __    ___   _ __      ___   __ _ | |__
 	</style>
 	<script type="application/javascript">
 	   window.addEventListener('load', function(evnt) {
-	   	 var closeButton = document.getElementById('close-button');
-	     closeButton.addEventListener('click', function(evnt) {
-	     	var dialog = document.getElementById('dialog');
+	   	 var closeFunc = function(evnt) {
+	   	 	var dialog = document.getElementById('dialog');
 	     	var name = document.getElementById('name');
 	     	dialog.style.display = 'none';
 	     	name.style.display = 'block';
-	     });
+	   	 };
+	     document.getElementById('close-button').addEventListener('click', closeFunc);
+	     document.getElementById('x-button').addEventListener('click', closeFunc);
 	   });
 	</script>
   </head>
@@ -46,6 +47,7 @@ __   __  __ _  _ __    ___   _ __      ___   __ _ | |__
     	<img src="img/dialog.png" usemap="#close-map" />
     	<map name="close-map">
     	  <area id="close-button" shape="rect" coords="238,147,346,168" nohref />
+    	  <area id="x-button" shape="rect" coords="327,1,357,20" nohref />
     	</map>
     </div>
   </body>
