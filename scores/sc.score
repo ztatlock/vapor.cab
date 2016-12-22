@@ -1,0 +1,26 @@
+120 32
+x.x...x......................... ./note square 0.1 $PER Am 1
+................x.x...x........x ./note square 0.1 $PER Am 1
+x.x...x.................x.x...x. ./note square 0.1 $PER Am 3
+........x.x...x.x.x...x......... ./note square 0.1 $PER Am 4
+x.x...x.................x.x...x. ./note square 0.1 $PER Am 5
+........x.x...x.x.x...x........x ./note square 0.1 $PER Am 6
+........................x.x...x. ./note square 0.1 $PER Am 7
+........x.x...x................. ./note square 0.1 $PER Am 8
+.........................x...... ./note triangle 1 $PER Am 1
+.......................x........ ./note triangle 0.8 $PER Am 2
+...............x................ ./note triangle 0.6 $PER Am 2
+.....................x.......... ./note triangle 0.8 $PER Am 3
+........xx.x....xx.x............ ./note triangle 0.5 $PER Am 4
+..........x.......x............. ./note triangle 0.5 $PER Am 5
+........xx.x....xx.x............ ./note triangle 0.5 $PER Am 6
+....xx.......................... ./note triangle 0.5 $PER Am 7
+..xx...x.....................xxx ./note triangle 0.5 $PER Am 8
+x.......x.......x.......x....... say -r 120 "[[volm 0.7]] a b c, a b c, a [[volm
+1]] b c"
+x............................... say -r 140 "[[volm 2]] sound."
+...............x................ say -r 50 "[[volm 2]] sound"
+...............x.x.x.x.......... say -r 50 "[[volm 1]] sound"
+.......................x.x.x.x.x say -r 50 "[[volm 0.5]] sound"
+.......x........................ say -r 140 "[[volm 2]] computer"
+.......................x........ say -r 60 "[[volm 2]] computer"

@@ -1,0 +1,11 @@
+120 8
+x....... ./note square 0.1 $PER Ach 1
+.x...... ./note square 0.1 $PER Ach 2
+..x..... ./note square 0.1 $PER Ach 4
+...x.... ./note square 0.1 $PER Ach 6
+....x... ./note square 0.1 $PER Ach 8
+.....x.. ./note square 0.1 $PER Ach 9
+......x. ./note square 0.1 $PER Ach 11
+.......x ./note square 0.1 $PER Ach 13
+x....... say -r 100 "[[volm 1]] tick tock chop shop"
+....x... say -r 100 "[[volm 1]] tea shop"
