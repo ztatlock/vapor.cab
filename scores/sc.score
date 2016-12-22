@@ -16,8 +16,7 @@ x.x...x.................x.x...x. ./note square 0.1 $PER Am 5
 ........xx.x....xx.x............ ./note triangle 0.5 $PER Am 6
 ....xx.......................... ./note triangle 0.5 $PER Am 7
 ..xx...x.....................xxx ./note triangle 0.5 $PER Am 8
-x.......x.......x.......x....... say -r 120 "[[volm 0.7]] a b c, a b c, a [[volm
-1]] b c"
+x.......x.......x.......x....... say -r 120 "[[volm 0.7]] a b c, a b c, a"
 x............................... say -r 140 "[[volm 2]] sound."
 ...............x................ say -r 50 "[[volm 2]] sound"
 ...............x.x.x.x.......... say -r 50 "[[volm 1]] sound"
