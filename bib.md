@@ -3,6 +3,7 @@
 ## DSP
 
 [wavepot](http://wavepot.com/)
+[code golf song](http://txti.es/bitshiftvariationsincminor)
 
 ## Drum Sequencer
 
