@@ -1,0 +1,22 @@
+width=16
+tempo=120
+function math { echo "$@" | bc -l; }
+beat=$(math "60 / $tempo")
+function dur { math "$beat / (1 / $1)"; }
+function synth { /usr/local/bin/play -q -n synth $1 $2 $3 vol $4; }
+function sin { synth $1 sine     $3 $2; }
+function sqr { synth $1 square   $3 $2; }
+function tri { synth $1 triangle $3 $2; }
+function saw { synth $1 sawtooth $3 $2; }
+function plk { synth $1 pluck    $3 $2; }
+function nos { synth $1 noise    $3 $2; }
+function apply { ${@:$(($#))} ${@:1:(($#-1))}; }
+x="sun"
+y="rise"
+
+................ echo
+.z.z.z.z.z.z.z.z saw $(dur 2) 0.3 G1
+..z...z...z...z. saw $(dur 2) 0.4 C1
+.z...z...z...z.. saw $(dur 2) 0.5 B1
+zzzzzzzzzzzzzzzz sin $(dur 6) 0.5 $(math "100 + $cursor / (1 / 10)")
+x..y..x..y..x..y say -v Fred -r 50 [[volm 10]]

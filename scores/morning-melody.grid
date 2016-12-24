@@ -1,0 +1,24 @@
+width=32
+tempo=240
+function math { echo "$@" | bc -l; }
+beat=$(math "60 / $tempo")
+function dur { math "$beat / (1 / $1)"; }
+function synth { /usr/local/bin/play -q -n synth $1 $2 $3 vol $4; }
+function sin { synth $1 sine     $3 $2; }
+function sqr { synth $1 square   $3 $2; }
+function tri { synth $1 triangle $3 $2; }
+function saw { synth $1 sawtooth $3 $2; }
+function plk { synth $1 pluck    $3 $2; }
+function nos { synth $1 noise    $3 $2; }
+function apply { ${@:$(($#))} ${@:1:(($#-1))}; }
+a=B4
+b=G4
+A=G2
+B=B2
+
+................................ echo
+.aa....b....abba..b...abb...baab plk $(dur 1.5) 0.7
+z...z..z...z....z...z.....zz.... plk $(dur 4) 0.9 C3
+..z......zz...z...z......z....z. plk $(dur 2) 0.8 B3
+...zz....z...z.....zz....z.z...z plk $(dur 2) 0.8 G3
+A..B.ABAB...A...B....BABA...B... plk $(dur 6) 0.8
