@@ -32,4 +32,4 @@ Ach*)
   ;;
 esac
 
-/usr/local/bin/play -n synth $DURATION $WAVE ${SCALE[$((NOTE - 1))]} vol $VOL
+/usr/local/bin/play -q -n synth $DURATION $WAVE ${SCALE[$((NOTE - 1))]} vol $VOL

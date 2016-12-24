@@ -1,0 +1,25 @@
+width=30
+tempo=300
+function math { echo "$@" | bc -l; }
+beat=$(math "60 / $tempo")
+function dur { math "$beat / (1 / $1)"; }
+function synth { /usr/local/bin/play -q -n synth $1 $2 $3 vol $4; }
+function sin { synth $1 sine     $3 $2; }
+function sqr { synth $1 square   $3 $2; }
+function tri { synth $1 triangle $3 $2; }
+function saw { synth $1 sawtooth $3 $2; }
+function plk { synth $1 pluck    $3 $2; }
+function nos { synth $1 noise    $3 $2; }
+a=G2
+b=G3
+c=G4
+grid=$(if [ $(expr $RANDOM % 20) -eq 0 ] ; then echo "scores/sc.grid"; else echo "scores/example.grid"; fi )
+
+.............................. echo
+abc..abc..abc..abc..abc..abc.. saw $(dur 2) 0.25
+.bac..bac..bac..bac..bac..bac. plk $(dur 3) 0.3
+.......zzz..z.z.z..zzz..z.z.z. sin $(dur 1.3) 0.7 G
+........zzz..z.z.z..zzz..z.z.z sin $(dur 1.2) 0.8 C
+.........zzz..z.z.z..zzz..z.z. sin $(dur 1.1) 0.9 D
+z..z..z..z..z..z..z..z..z..z.. tri $(dur 5) 0.7 $(math "200 + 1.1 / (1 / ($cursor + 1))")
+z............................. say -r 50 "$RANDOM"

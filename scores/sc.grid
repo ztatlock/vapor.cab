@@ -1,0 +1,29 @@
+tempo=120
+beat=$(echo "60 / $tempo" | bc -l)
+width=32
+grid=$(if [ $(expr $RANDOM % 20) -eq 0 ] ; then echo "scores/example.grid"; else echo "scores/sc.grid"; fi )
+
+x.x...x......................... ./note square 0.1 $beat Am 1
+................x.x...x........x ./note square 0.1 $beat Am 1
+x.x...x.................x.x...x. ./note square 0.1 $beat Am 3
+........x.x...x.x.x...x......... ./note square 0.1 $beat Am 4
+x.x...x.................x.x...x. ./note square 0.1 $beat Am 5
+........x.x...x.x.x...x........x ./note square 0.1 $beat Am 6
+........................x.x...x. ./note square 0.1 $beat Am 7
+........x.x...x................. ./note square 0.1 $beat Am 8
+.........................x...... ./note triangle 1 $beat Am 1
+.......................x........ ./note triangle 0.8 $beat Am 2
+...............x................ ./note triangle 0.6 $beat Am 2
+.....................x.......... ./note triangle 0.8 $beat Am 3
+........xx.x....xx.x............ ./note triangle 0.5 $beat Am 4
+..........x.......x............. ./note triangle 0.5 $beat Am 5
+........xx.x....xx.x............ ./note triangle 0.5 $beat Am 6
+....xx.......................... ./note triangle 0.5 $beat Am 7
+..xx...x.....................xxx ./note triangle 0.5 $beat Am 8
+x.......x.......x.......x....... say -r 120 "[[volm 0.7]] a b c, a b c, a"
+x............................... say -r 140 "[[volm 2]] sound."
+...............x................ say -r 50 "[[volm 2]] sound"
+...............x.x.x.x.......... say -r 50 "[[volm 1]] sound"
+.......................x.x.x.x.x say -r 50 "[[volm 0.5]] sound"
+.......x........................ say -r 140 "[[volm 2]] computer"
+.......................x........ say -r 60 "[[volm 2]] computer"
