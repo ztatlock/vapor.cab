@@ -1,0 +1,14 @@
+source babble-lib.sh
+width=64
+set_tempo_beat $(evalF "sqrt(2) / 8")
+x=$(evalF "200 + ($(evalI "$cursor % 8") / (1 / 100))")
+y=$(evalF "100 + ($(evalI "$cursor % 8") / (1 / 50))")
+a=500
+b=600
+c=700
+
+................................................................ echo
+x.xx.xxx.x.xx.xxx.x.xx.xxx.x.xx.xxx.x.xx.xxx.x.xx.xxx.x.xx.xxx.. plk $(dur 3) 0.4
+.y.yy.yyy.y.yy.yyy.y.yy.yyy.y.yy.yyy.y.yy.yyy.y.yy.yyy.y.yy.yyy. sqr $(dur 4) 0.1
+.ab....aba.....cb.a.....bab...ba.abc...bbb....a..bc..bc.a.c.cccc saw $(dur 1.5) 0.25
+.............................................................s.. say "and again"
