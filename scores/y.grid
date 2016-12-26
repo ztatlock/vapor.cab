@@ -1,0 +1,12 @@
+source babble-lib.sh
+width=60
+set_tempo_beat $(evalF "sqrt(2) / 8")
+x=$(evalF "100 + ($(evalI "$cursor % 4") / (1 / 100))")
+a=500
+b=600
+c=700
+
+............................................................ echo
+x.xx.xxx.x.xx.xxx.x.xx.xxx.x.xx.xxx.x.xx.xxx.x.xx.xxx.x.xx.. plk $(dur 3) 0.5
+.ab....aba.....bcb..ab...ab..ab...bc...bcb....a..bc..ba..abc sin $(dur 1.5) 0.4
+z.............................z............................. say -r 50 [[volm 5]] $RANDOM

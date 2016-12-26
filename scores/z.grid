@@ -1,0 +1,16 @@
+source babble-lib.sh
+width=80
+tempo=$(evalF "($cursor + 20) / (1 / 4)")
+tempo=$(evalF "120 + s(($cursor / $width) / (1 / 6.28))^2 / (1 / 480)")
+a=$(evalF "100 + ($cursor / (1 / 5))")
+m=100
+n=200
+o=300
+p=200
+q=400
+r=800
+
+................................................................................ echo
+m..on..mm.o.m.nmn.o.m.nm..oo.mn.nm.oom.nm..on..mm.o.m.nmn.o.m.nm..oo.mn.nm.oom.n sqr $(dur 1) 0.1
+.p.q.r.pr.pq..qpr..pqrppq...rpqr..rr..qq..p.pq..pqr...rqp..p.pq.qr...r..qr.qqrp. plk $(dur 2) 0.1
+a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a. tri $(dur 8) 0.3
