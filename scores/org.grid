@@ -1,0 +1,9 @@
+source babble-lib.sh
+width=9
+tempo=120
+x=Am7
+y=c2
+z=c3
+
+......... echo
+x..y..z.. org $(dur 3.1) 0.2
