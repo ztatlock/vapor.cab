@@ -1,5 +1,23 @@
 #!/usr/bin/env bash
 
+EXIT_AFTER_ONE=0
+
+function usage {
+  echo "Usage: $(basename $0) [-e] GRID"
+  echo "    -e    exit after one iteration"
+  echo "    GRID  the grid file to play"
+  exit 1
+}
+
+while getopts "e" OPT; do
+  case "$OPT" in
+    "e") EXIT_AFTER_ONE=1 ;;
+      *) usage ;;
+  esac
+done
+
+shift $((OPTIND-1))
+
 grid="$1"
 width=100
 tempo=100
@@ -41,6 +59,9 @@ while true; do
   echo
 
   cursor=$(expr \( $cursor + 1 \) % $width)
+  if [ $EXIT_AFTER_ONE -eq 1 ] && [ $cursor -eq 0 ] ; then
+      exit
+  fi
   __t1=$(gdate "+%s.%N")
   sleep $(echo "( 60 / $tempo ) - ( $__t1 - $__t0 )" | bc -l)
 done
