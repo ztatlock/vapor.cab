@@ -1,0 +1,7 @@
+source scores/lydian/prelude.sh
+
+f.......g.......a.......b.......c.......d.......e....... sin $(dur 8) 0.5
+....e.......d.......c.......b.......a.......g.......f... sin $(dur 8) 0.5
+c.......d.......e.......f.......f.......g.......a....... sin $(dur 8) 0.5
+....a.......b.......g.......d.......e.......b.......c... sin $(dur 8) 0.5
+.edcbagf.edcbagf.edcbagf.edcbagf.edcbagf.edcbagf.edcbagf sin $(dur 1) 0.5
